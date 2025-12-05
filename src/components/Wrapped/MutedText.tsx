@@ -9,7 +9,7 @@ function MutedText({
 }) {
   return (
     <p
-      className={`text-zinc-800 font-medium ${className} text-left`}
+      className={`text-slate-300 font-medium ${className} text-left`}
       suppressHydrationWarning
     >
       {children}

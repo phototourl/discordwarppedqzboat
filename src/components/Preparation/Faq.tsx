@@ -13,7 +13,7 @@ const items = [
     answer: (
       <>
         Visit{" "}
-        <a href="https://discord.com/settings/account" target="_blank" rel="noopener noreferrer" className="underline font-bold">
+        <a href="https://discord.com/settings/account" target="_blank" rel="noopener noreferrer" className="underline font-bold text-cyan-400 hover:text-cyan-300">
             Discord's Data Download Page
         </a> and request your data in 'JSON - Machine-readable file' format. After requesting, wait for Discord to prepare the file. Once ready, download it from the 'Download data' section and upload it to Discord Wrapped.
       </>
@@ -38,7 +38,7 @@ const items = [
           href="https://github.com/vantezzen/wrapped"
           target="_blank"
           rel="noopener noreferrer nofollow"
-          className="underline font-bold"
+          className="underline font-bold text-cyan-400 hover:text-cyan-300"
         >
           this link
         </a>. 
@@ -145,7 +145,7 @@ const items = [
           href="https://developer.spotify.com/documentation/embeds"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline font-bold"
+          className="underline font-bold text-cyan-400 hover:text-cyan-300"
         >
           Spotify Embeds
         </a>{" "}

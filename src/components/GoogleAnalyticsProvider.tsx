@@ -1,13 +1,12 @@
 "use client";
 
-import { Suspense } from "react";
-import GoogleAnalytics from "./GoogleAnalytics";
+import dynamic from "next/dynamic";
+
+const GoogleAnalytics = dynamic(() => import("./GoogleAnalytics"), {
+  ssr: false,
+});
 
 export default function GoogleAnalyticsProvider() {
-  return (
-    <Suspense fallback={null}>
-      <GoogleAnalytics />
-    </Suspense>
-  );
+  return <GoogleAnalytics />;
 }
 

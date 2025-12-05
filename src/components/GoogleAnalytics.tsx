@@ -2,40 +2,61 @@
 
 import Script from "next/script";
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
 import { pageview } from "@/lib/gtag";
 import { GA_CONFIG, validateGAConfig } from "@/lib/ga-config";
 
 const GA_MEASUREMENT_ID = GA_CONFIG.measurementId;
 
 export default function GoogleAnalytics() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const validation = validateGAConfig();
-    
-    if (!validation.isValid) {
-      if (GA_CONFIG.debug) {
-        console.warn("Google Analytics:", validation.message);
-      }
-      return;
-    }
-
-    if (!GA_CONFIG.enabled) {
-      return;
-    }
-
-    const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
-    pageview(url);
-  }, [pathname, searchParams]);
-
   // Validate configuration on mount
   useEffect(() => {
     const validation = validateGAConfig();
     if (!validation.isValid && GA_CONFIG.debug) {
       console.warn("Google Analytics Configuration:", validation.message);
     }
+  }, []);
+
+  // Track page views on route changes
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const validation = validateGAConfig();
+    if (!validation.isValid || !GA_CONFIG.enabled) {
+      return;
+    }
+
+    // Initial pageview
+    const url = window.location.pathname + window.location.search;
+    pageview(url);
+
+    // Listen for route changes (Next.js App Router)
+    const handleRouteChange = () => {
+      const newUrl = window.location.pathname + window.location.search;
+      pageview(newUrl);
+    };
+
+    // Use MutationObserver to detect route changes in Next.js App Router
+    let lastUrl = url;
+    const observer = new MutationObserver(() => {
+      const currentUrl = window.location.pathname + window.location.search;
+      if (currentUrl !== lastUrl) {
+        lastUrl = currentUrl;
+        handleRouteChange();
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    // Also listen to popstate for browser back/forward
+    window.addEventListener("popstate", handleRouteChange);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("popstate", handleRouteChange);
+    };
   }, []);
 
   if (!GA_MEASUREMENT_ID || !GA_CONFIG.enabled) {

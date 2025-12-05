@@ -8,7 +8,7 @@ function InfoText({
   className?: string;
 }) {
   return (
-    <p className={`text-zinc-600 text-xl font-medium ${className}`}>
+    <p className={`text-slate-200 text-xl font-medium ${className}`}>
       {children}
     </p>
   );

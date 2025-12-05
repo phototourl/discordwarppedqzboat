@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import WrappedContainer from "./WrappedContainer";
 import FatHeading from "./FatHeading";
 import InfoText from "./InfoText";
@@ -44,7 +45,6 @@ function ExampleWrappedImage() {
         position: "relative",
         backgroundColor: "#18181B",
       }}
-      suppressHydrationWarning
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -70,53 +70,59 @@ function IntroInformation({
 }) {
   return (
     <WrappedContainer>
-      <div className="w-full max-w-7xl mx-auto" suppressHydrationWarning>
+      <div className="w-full max-w-7xl mx-auto">
         {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-16" suppressHydrationWarning>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-16">
           <div className="flex flex-col gap-6 lg:gap-8 text-left">
             <div className="space-y-4">
-              <FatHeading className="text-4xl md:text-5xl lg:text-6xl leading-tight">
-                Discord Checkpoint
+              <FatHeading className="text-4xl md:text-5xl lg:text-6xl leading-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                Discord Wrapped
               </FatHeading>
-              <InfoText className="text-lg md:text-xl">
-                Discover and relive your top Discord moments. Explore your messages, servers, and conversations from the past year.
+              <InfoText className="text-lg md:text-xl text-slate-200">
+                Your Discord year in review. Discover your top messages, most active servers, favorite conversations, and relive your best Discord moments from the past year with Discord Wrapped.
               </InfoText>
             </div>
 
             <div className="space-y-4 pt-4">
-              <FatHeading className="text-2xl md:text-3xl" component="h2">
-                How it works
+              <FatHeading className="text-2xl md:text-3xl text-cyan-400" component="h2">
+                How It Works
               </FatHeading>
-              <MutedText className="text-base md:text-lg leading-relaxed">
-                Uncover the story of your Discord journey! Download your data in the <strong>'JSON - Machine-readable file'</strong> format from Discord Data Download.
+              <MutedText className="text-base md:text-lg leading-relaxed text-slate-300">
+                Download your Discord data export from Discord's settings in <strong className="text-cyan-400 font-semibold">JSON format</strong>. Upload it to Discord Wrapped and we'll generate your personalized year in review - just like Spotify Wrapped, but for your Discord activity!
                 <br /><br />
-                Your exported data does not include login credentials! For more info, check the FAQ section below.
+                <span className="text-cyan-400 font-medium">🔒 Privacy-First:</span> Discord Wrapped processes everything in your browser. Your data never leaves your device. We don't store, upload, or see any of your Discord data. Learn more in our <Link href="/docs/privacy" className="text-blue-400 hover:text-blue-300 underline font-medium">privacy documentation</Link>.
               </MutedText>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col gap-4 pt-4">
               <Button 
-                className="dark w-full h-12 text-base opacity-60 cursor-not-allowed" 
-                disabled
+                className="w-full h-12 text-base bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white border border-blue-400/50 shadow-lg shadow-blue-500/30" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  // TODO: 实现跳转功能
+                }}
               >
                 Open Discord
-                <ExternalLink className="ml-2" size={18} />
               </Button>
               <Button 
-                className="flex-1 h-12 text-base opacity-60 cursor-not-allowed" 
-                disabled
+                className="w-full h-12 text-base bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white border border-cyan-400/50 shadow-lg shadow-cyan-500/30" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  // TODO: 实现跳转功能
+                }}
               >
                 I have my data
-                <ArrowRight className="ml-2" size={18} />
+              </Button>
+              <Button 
+                className="w-full h-12 text-base bg-slate-800 hover:bg-slate-700 text-blue-400 border border-blue-500/30 shadow-lg shadow-blue-500/20" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  // TODO: 实现跳转功能
+                }}
+              >
+                Show demo Wrapped
               </Button>
             </div>
-            <Button 
-              className="w-full sm:w-auto h-12 text-base bg-starship-100 hover:bg-starship-200 opacity-60 cursor-not-allowed" 
-              disabled
-            >
-              <PlugZap className="mr-2" size={18} />
-              Show demo Wrapped
-            </Button>
           </div>
 
           <div className="flex justify-center items-center">
@@ -127,14 +133,14 @@ function IntroInformation({
         </div>
 
         {/* Video Showcase Section */}
-        <div className="py-12 lg:py-16" suppressHydrationWarning>
-          <div className="max-w-4xl mx-auto text-center space-y-6" suppressHydrationWarning>
+        <div className="py-12 lg:py-16">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="space-y-3">
-              <FatHeading className="text-3xl md:text-4xl" component="h2">
-                See It In Action
+              <FatHeading className="text-3xl md:text-4xl text-cyan-400" component="h2">
+                See Discord Wrapped In Action
               </FatHeading>
-              <InfoText className="text-lg">
-                Watch this video to see Discord Wrapped in action and discover what insights await you!
+              <InfoText className="text-lg text-slate-200">
+                Watch this video to see how Discord Wrapped works and discover what insights await you! Learn more in our <Link href="/docs" className="text-cyan-400 hover:text-cyan-300 underline">documentation</Link> or read our <Link href="/blog" className="text-cyan-400 hover:text-cyan-300 underline">blog posts</Link>.
               </InfoText>
             </div>
             <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl">
@@ -142,7 +148,7 @@ function IntroInformation({
                 width="100%"
                 height="100%"
                 src="https://www.youtube-nocookie.com/embed/lzDVs5Cx1fg"
-                title="Discord Checkpoint | Discord Wrapped Showcase"
+                title="Discord Wrapped Showcase"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className="absolute top-0 left-0 w-full h-full"
@@ -152,11 +158,14 @@ function IntroInformation({
         </div>
 
         {/* FAQ Section */}
-        <div className="py-12 lg:py-16" suppressHydrationWarning>
-          <div className="max-w-4xl mx-auto space-y-8" suppressHydrationWarning>
-            <FatHeading className="text-3xl md:text-4xl text-center" component="h2">
+        <div className="py-12 lg:py-16">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <FatHeading className="text-3xl md:text-4xl text-center text-cyan-400" component="h2">
               Frequently Asked Questions
             </FatHeading>
+            <p className="text-center text-slate-400 mb-6">
+              Can't find what you're looking for? Check out our <Link href="/docs" className="text-cyan-400 hover:text-cyan-300 underline">documentation</Link> or <Link href="/faq" className="text-cyan-400 hover:text-cyan-300 underline">full FAQ page</Link>.
+            </p>
             <Faq />
           </div>
         </div>
