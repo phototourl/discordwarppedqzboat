@@ -8,5 +8,5 @@ export default abstract class Persona {
    * Get a score between 0 and 1 that indicates how well the given statistics
    * fit this persona.
    */
-  public abstract getFittingScore(statistics: Statistics): number;
+  public abstract getFittingScore(_statistics: Statistics): number;
 }

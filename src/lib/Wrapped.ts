@@ -121,6 +121,7 @@ export default class Wrapped {
   }
 
   private calculateStatistic<T>(
+    // eslint-disable-next-line unused-imports/no-unused-vars
     statistic: new (wrapped: Wrapped) => Statistic<T>
   ): T {
     const statisticInstance = new statistic(this);

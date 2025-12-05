@@ -193,12 +193,12 @@ export class TikTokEnjoyer extends Persona {
   public readonly description =
     "You're just here to enjoy the content. No shame in that!";
 
-  public getFittingScore(statistics: Statistics): number {
+  public getFittingScore(_statistics: Statistics): number {
     return 0;
   }
 }
 
-export default [
+const defaultPersonas = [
   new InteractionMonster(),
   new ShyJunkie(),
   new Commentator(),
@@ -213,3 +213,5 @@ export default [
   new TrendTracker(),
   new ThoughtfulAnalyst(),
 ];
+
+export default defaultPersonas;
