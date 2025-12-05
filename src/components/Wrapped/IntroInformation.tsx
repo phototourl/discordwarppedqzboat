@@ -7,7 +7,6 @@ import FatHeading from "./FatHeading";
 import InfoText from "./InfoText";
 import MutedText from "./MutedText";
 import { Button } from "../ui/button";
-import { ArrowRight, ExternalLink, PlugZap } from "lucide-react";
 import Faq from "../Preparation/Faq";
 import Footer from "../Footer";
 
@@ -62,8 +61,8 @@ function ExampleWrappedImage() {
 }
 
 function IntroInformation({
-  onContinue,
-  onDemo,
+  onContinue: _onContinue,
+  onDemo: _onDemo,
 }: {
   onContinue: () => void;
   onDemo: () => void;
