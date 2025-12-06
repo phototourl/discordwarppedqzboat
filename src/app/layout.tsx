@@ -83,7 +83,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon_logo.png" />
           <link rel="canonical" href="https://discordwarpped.qzboat.com/" />
         
       </head>
