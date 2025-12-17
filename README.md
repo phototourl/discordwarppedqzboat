@@ -47,4 +47,4 @@ with `5000` being the size of array elements to generate per item - 5000 is appr
 
 ## License
 
-MIT
+For any details on the license, please refer to the [License](LICENSE) file.
