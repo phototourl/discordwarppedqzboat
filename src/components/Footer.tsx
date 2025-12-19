@@ -150,8 +150,10 @@ function Footer() {
                 className="inline-block transition-transform hover:scale-105"
               >
                 <img
-                  src="https://phototourl.com/og-image.png"
+                  src="/badge-phototourl.svg"
                   alt="Photo to URL"
+                  width={250}
+                  height={54}
                   className="h-6 w-auto"
                 />
               </a>
