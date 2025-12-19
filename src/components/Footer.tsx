@@ -12,6 +12,16 @@ function Footer() {
             <h3 className="text-cyan-400 font-semibold mb-4">Product</h3>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
+                <a
+                  href="https://phototourl.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  Photo to URL
+                </a>
+              </li>
+              <li>
                 <Link href="/" className="hover:text-cyan-400 transition-colors">
                   Home
                 </Link>
@@ -142,6 +152,37 @@ function Footer() {
                 />
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Photo to URL Badge */}
+        <div className="border-t border-cyan-500/20 py-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://phototourl.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block transition-transform hover:scale-105 rounded-lg overflow-hidden shadow-md"
+              style={{
+                width: '200px',
+                height: '54px',
+                backgroundImage: 'url(https://phototourl.com/og-image.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                position: 'relative',
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-600/80 to-teal-500/80 flex items-center gap-2 px-3">
+                <div className="flex flex-col justify-center min-w-0">
+                  <div className="text-white font-bold text-sm leading-tight whitespace-nowrap drop-shadow-md">
+                    phototourl.com
+                  </div>
+                  <div className="text-white/95 text-[10px] leading-tight whitespace-nowrap drop-shadow-md">
+                    FREE IMAGE HOSTING
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
 
