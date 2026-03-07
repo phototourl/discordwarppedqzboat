@@ -13,8 +13,8 @@ npm run dev
 ## Environment
 
 Copy `env.example` to `.env.local` (or set in Vercel):
-- `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` - Google Analytics ID (e.g., G-5JXB93BWX1)
-- `NEXT_PUBLIC_SITE_URL` - Site URL (e.g., https://discordwarpped.qzboat.com)
+- `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` - Google Analytics ID (e.g., G-******)
+- `NEXT_PUBLIC_SITE_URL` - Site URL (e.g., https://phototourl.com/rounded-corners)
 
 ## Google Analytics Configuration
 
@@ -51,8 +51,8 @@ with `5000` being the size of array elements to generate per item - 5000 is appr
 
 Check out our other tools:
 - [Photo to URL](https://phototourl.com) - Turn photos into shareable links
-- [Circle Crop Image](https://circlecropimage.qzboat.com) - Round the corners of images
-- [qzboat](https://www.qzboat.com) - Professional AI SaaS Platform
+- [Circle Crop Image](https://phototourl.com/rounded-corners) - Round the corners of images
+- [qzboat](https://qzboat.com) - Professional AI SaaS Platform
 
 ## License
 
