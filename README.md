@@ -51,8 +51,9 @@ with `5000` being the size of array elements to generate per item - 5000 is appr
 
 Check out our other tools:
 - [Photo to URL](https://phototourl.com) - Turn photos into shareable links
-- [Photo to Rounded Corners](https://phototourl.com/rounded-corners) - Round the corners of images
-- [qzboat](https://qzboat.com) - Professional AI SaaS Platform
+- [Photo to Circle Crop](https://phototourl.com/circle-crop) - Round the corners of images and photos
+- [Photo to Rounded Corners](https://phototourl.com/rounded-corners) - Rounded Corners Tool | Free Online Rounded Corner Tool
+- [Photo to Remove Background](https://phototourl.com/remove-background)  - Remove Background Tool | Free Online AI Background Remover
 
 ## License
 
